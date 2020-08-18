@@ -125,10 +125,10 @@ open class Directions: NSObject {
             var baseURLComponents = URLComponents()
             baseURLComponents.scheme = "https"
             baseURLComponents.host = host
-            baseURLComponents.port = 8080
+            //baseURLComponents.port = 8080
             apiEndpoint = baseURLComponents.url!
         } else {
-            apiEndpoint = URL(string:(defaultApiEndPointURLString ?? "https://api.viettelmap.vn"))!
+            apiEndpoint = URL(string:(defaultApiEndPointURLString ?? "https://api.viettelmaps.vn"))!
         }
         
     }
@@ -141,8 +141,8 @@ open class Directions: NSObject {
      - parameter accessToken: A Mapbox [access token](https://docs.mapbox.com/help/glossary/access-token/). If an access token is not specified when initializing the directions object, it should be specified in the `MGLMapboxAccessToken` key in the main application bundle’s Info.plist.
      */
     @objc public convenience init(accessToken: String?) {
-        self.init(accessToken: accessToken, host: "api.viettelmaps.com.vn")
-		//self.init(accessToken: accessToken, host: "10.60.156.16")
+        //self.init(accessToken: accessToken, host: "api.viettelmaps.com.vn")
+		self.init(accessToken: accessToken, host: "api.viettelmaps.vn")
     }
 
     // MARK: Getting Directions
