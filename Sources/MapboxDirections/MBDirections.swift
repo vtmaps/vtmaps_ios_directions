@@ -8,6 +8,7 @@ public let MBDirectionsErrorDomain = "com.mapbox.directions.ErrorDomain"
 
 /// The Mapbox access token specified in the main application bundle’s Info.plist.
 let defaultAccessToken = Bundle.main.object(forInfoDictionaryKey: "VTMapAccessToken") as? String
+let bundleIdentifier = Bundle.main.object(forInfoDictionaryKey: "CFBundleIdentifier") as? String
 let defaultApiEndPointURLString = Bundle.main.object(forInfoDictionaryKey: "MGLMapboxAPIBaseURL") as? String
 
 var skuToken: String? {
@@ -298,7 +299,7 @@ open class Directions: NSObject {
         var params = (includesQuery ? options.urlQueryItems : [])
         params += [URLQueryItem(name: "coordinates", value: options.queries.joined(separator: ";"))]
         params += [URLQueryItem(name: "access_token", value: accessToken)]
-        
+        params += [URLQueryItem(name: "bundle_id", value: bundleIdentifier)]
         if let skuToken = skuToken {
             params += [URLQueryItem(name: "sku", value: skuToken)]
         }
