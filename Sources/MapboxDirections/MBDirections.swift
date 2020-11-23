@@ -300,7 +300,7 @@ open class Directions: NSObject {
         params += [URLQueryItem(name: "coordinates", value: options.queries.joined(separator: ";"))]
         params += [URLQueryItem(name: "access_token", value: accessToken)]
         params += [URLQueryItem(name: "bundle_id", value: bundleIdentifier)]
-		params += [URLQueryItem(name: "overview", value: "full"")]
+		params += [URLQueryItem(name: "overview", value: "full")]
         if let skuToken = skuToken {
             params += [URLQueryItem(name: "sku", value: skuToken)]
         }
