@@ -129,7 +129,7 @@ open class Directions: NSObject {
             //baseURLComponents.port = 8080
             apiEndpoint = baseURLComponents.url!
         } else {
-            apiEndpoint = URL(string:(defaultApiEndPointURLString ?? "https://api.viettelmaps.vn"))!
+            apiEndpoint = URL(string:(defaultApiEndPointURLString ?? "https://api-maps.viettel.vn"))!
         }
         
     }
@@ -143,7 +143,7 @@ open class Directions: NSObject {
      */
     @objc public convenience init(accessToken: String?) {
         //self.init(accessToken: accessToken, host: "api.viettelmaps.com.vn")
-		self.init(accessToken: accessToken, host: "api.viettelmaps.vn")
+		self.init(accessToken: accessToken, host: "api-maps.viettel.vn")
     }
 
     // MARK: Getting Directions
